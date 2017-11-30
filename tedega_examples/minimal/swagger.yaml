@@ -1,0 +1,22 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: Tedega Example
+  description: Example of the bare minimum Swagger spec
+paths:
+  /pings:
+    get:
+      responses:
+        200:
+          description: Returns "Pong" on each Request.
+          schema:
+             $ref: '#/definitions/Pong'
+definitions:
+  Pong:
+    type: object
+    properties:
+      data:
+        type: string
+        description: Value
+        example: Pong
+
