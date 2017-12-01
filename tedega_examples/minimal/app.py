@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import os
-import tedega_example
+import tedega_examples
 from tedega_storage import init_storage
 from tedega_view import (
         start_server,
@@ -33,4 +33,4 @@ if __name__ == "__main__":
     # Start the serving the view with the given swagger config. Also
     # provide the current modul as modul to be scanned for configured
     # view endpoints.
-    start_server(swagger_config=swagger, modul=tedega_example)
+    start_server(swagger_config=swagger, modul=tedega_examples)
