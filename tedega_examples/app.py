@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from tedega_share import (
+    get_logger
+)
 from tedega_view import (
     start_server,
     config_view_endpoint
@@ -10,6 +13,8 @@ from tedega_storage.rdbms import (
     init_storage,
     get_storage
 )
+
+log = get_logger("tedega_examples")
 
 ########################################################################
 #                                Model                                 #
@@ -37,6 +42,7 @@ def ping():
         items = storage.read(Ping)
         data["total"] = len(items)
         data["data"] = [item.get_values() for item in items]
+        log.info("Let's log something")
     return data
 
 if __name__ == "__main__":
