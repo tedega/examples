@@ -1,4 +1,2 @@
-# Include the license file
-
 # Include the data files
-recursive-include *.yml
+include tedega_examples/swagger.yaml
