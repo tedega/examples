@@ -52,10 +52,10 @@ def ping():
 
 def build_app(servicename):
     # Define things we want to happen of application creation. We want:
-    # 1. Initialise out fluent logger.
+    # 1. Initialise the fluent logger.
     # 2. Initialise the storage.
-    # 3. Start the monitoring of out service to the "outside".
-    # 4. Start the monitoring of the system every 10sec (CPU, RAM,DISK).
+    # 3. Start the monitoring the connectivity of the service to "google".
+    # 4. Start the monitoring the system's load every 10sec (CPU, RAM, DISK).
     run_on_init = [(init_logger, servicename),
                    (init_storage, None),
                    (monitor_connectivity, [("www.google.com", 80)]),
