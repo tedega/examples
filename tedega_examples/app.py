@@ -44,7 +44,7 @@ def ping():
         factory = Ping.get_factory(storage)
         item = factory.create()
         storage.create(item)
-        # Read all previous ping from storage and populate the data
+        # Read all previous pings from storage and populate the data
         # object.
         items = storage.read(Ping)
         data["total"] = len(items)
