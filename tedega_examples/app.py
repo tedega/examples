@@ -35,18 +35,22 @@ class Ping(BaseItem, RDBMSStorageBase):
 
 @config_view_endpoint(path="/pings", method="GET", auth=None)
 def ping():
+
     data = {}
     log = get_logger()
-    with get_storage() as storage:
 
+    with get_storage() as storage:
+        # Create a new "Ping" and store it in the storage.
         factory = Ping.get_factory(storage)
         item = factory.create()
         storage.create(item)
-
+        # Read all previous ping from storage and populate the data
+        # object.
         items = storage.read(Ping)
         data["total"] = len(items)
         data["data"] = [item.get_values() for item in items]
         log.info("Let's log something")
+
     return data
 
 
