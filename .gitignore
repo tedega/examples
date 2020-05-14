@@ -1,3 +1,4 @@
 tedega_examples.egg-info/
 tedega_examples/__pycache__/
 tedega_examples/minimal/__pycache__/
+*.db
