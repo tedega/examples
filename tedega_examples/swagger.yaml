@@ -6,6 +6,7 @@ info:
 paths:
   /pings:
     get:
+      operationId: dummyID 
       responses:
         200:
           description: Returns "Pong" on each Request.
