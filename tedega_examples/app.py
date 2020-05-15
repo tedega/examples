@@ -60,10 +60,10 @@ def build_app(servicename):
     # 2. Initialise the storage.
     # 3. Start the monitoring the connectivity of the service to "google".
     # 4. Start the monitoring the system's load every 10sec (CPU, RAM, DISK).
-    run_on_init = [(init_logger, servicename),
-                   (init_storage, None),
+    run_on_init = [(init_logger, [servicename, {"host": "localhost"}]),
+                   (init_storage, []),
                    (monitor_connectivity, [("www.google.com", 80)]),
-                   (monitor_system, 10)]
+                   (monitor_system, [None, {"interval": 10}])]
     application = create_application(servicename, run_on_init=run_on_init)
     return application
 
